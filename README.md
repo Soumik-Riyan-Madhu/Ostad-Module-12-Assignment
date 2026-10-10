@@ -1,6 +1,6 @@
-🎓 StudentHub API
+# 🎓 StudentHub API
 
-A Student Management REST API built with Node.js, Express.js & MongoDB
+### A Student Management REST API built with Node.js, Express.js & MongoDB
 
 <p align="center">
   A simple, structured, and beginner-friendly backend project for managing student records through RESTful API endpoints.
@@ -12,62 +12,39 @@ A Student Management REST API built with Node.js, Express.js & MongoDB
   ![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 </p>
 
-📌 About the Project
+---
 
-StudentHub API is a Student Management System backend developed as part of the Ostad Full Stack Web Development with JavaScript (MERN) & AI course.
+## 📌 About the Project
+
+**StudentHub API** is a Student Management System backend developed as part of the **Ostad Full Stack Web Development with JavaScript (MERN) & AI** course.
 
 It provides RESTful API endpoints to create, retrieve, update, and delete student records stored in MongoDB.
 
-✨ Features
+### ✨ Features
 
-➕ Create new student records
+- ➕ Create new student records
+- 📋 Retrieve all students
+- 🔍 Retrieve a specific student by ID
+- ✏️ Update existing student information
+- 🗑️ Delete student records
+- ☁️ MongoDB Atlas database integration
+- 🔐 Environment variable configuration
+- ⚡ Express.js-powered REST API
 
-📋 Retrieve all students
+## 🛠️ Technologies Used
 
-🔍 Retrieve a specific student by ID
+| Technology | Purpose |
+|---|---|
+| Node.js | JavaScript runtime |
+| Express.js | Backend framework |
+| MongoDB Atlas | Cloud database |
+| Mongoose | MongoDB object modeling |
+| dotenv | Environment variable management |
+| Nodemon | Development server utility |
 
-✏️ Update existing student information
+## 📂 Project Structure
 
-🗑️ Delete student records
-
-☁️ MongoDB Atlas database integration
-
-🔐 Environment variable configuration
-
-⚡ Express.js-powered REST API
-
-🛠️ Technologies Used
-
-Technology
-
-Purpose
-
-Node.js
-
-JavaScript runtime
-
-Express.js
-
-Backend framework
-
-MongoDB Atlas
-
-Cloud database
-
-Mongoose
-
-MongoDB object modeling
-
-dotenv
-
-Environment variable management
-
-Nodemon
-
-Development server utility
-
-📂 Project Structure
-
+```text
 Ostad-Module-12-Assignment/
 ├── models/
 │   └── Student.js
@@ -78,187 +55,169 @@ Ostad-Module-12-Assignment/
 ├── package-lock.json
 ├── server.js
 └── README.md
+```
 
-⚙️ Installation & Setup
+## ⚙️ Installation & Setup
 
-1. Clone the repository
+### 1. Clone the repository
 
+```bash
 git clone https://github.com/Soumik-Riyan-Madhu/Ostad-Module-12-Assignment.git
+```
 
-2. Navigate to the project directory
+### 2. Navigate to the project directory
 
+```bash
 cd Ostad-Module-12-Assignment
+```
 
-3. Install dependencies
+### 3. Install dependencies
 
+```bash
 npm install
+```
 
-4. Configure environment variables
+### 4. Configure environment variables
 
-Create a .env file in the root directory:
+Create a `.env` file in the root directory:
 
+```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
+```
 
-Replace your_mongodb_connection_string with your own MongoDB connection string. Never publish database credentials or your .env file.
+Replace `your_mongodb_connection_string` with your own MongoDB connection string. Never publish database credentials or your `.env` file.
 
-5. Start the server
+### 5. Start the server
 
+```bash
 npm start
+```
 
 If a development script is configured, you can use:
 
+```bash
 npm run dev
+```
 
 The API will run at:
 
-http://localhost:5000
+**http://localhost:5000**
 
-🔗 API Documentation
+## 🔗 API Documentation
 
-Base URL: http://localhost:5000
+Base URL: `http://localhost:5000`
 
-Method
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Check API status |
+| POST | `/students` | Create a student |
+| GET | `/students` | Get all students |
+| GET | `/students/:id` | Get a student by ID |
+| PUT | `/students/:id` | Update a student |
+| DELETE | `/students/:id` | Delete a student |
 
-Endpoint
+### 📝 Example: Create a Student
 
-Description
+**Request**
 
-GET
-
-/
-
-Check API status
-
-POST
-
-/students
-
-Create a student
-
-GET
-
-/students
-
-Get all students
-
-GET
-
-/students/:id
-
-Get a student by ID
-
-PUT
-
-/students/:id
-
-Update a student
-
-DELETE
-
-/students/:id
-
-Delete a student
-
-📝 Example: Create a Student
-
-Request
-
+```http
 POST /students
 Content-Type: application/json
+```
 
-Request Body
+**Request Body**
 
+```json
 {
   "name": "Rahim Ahmed",
   "email": "rahim@example.com",
   "age": 18,
   "department": "Computer Science"
 }
+```
 
 The server should return the created student record if the request succeeds.
 
-📋 Example: Get All Students
+### 📋 Example: Get All Students
 
+```http
 GET /students
+```
 
 Returns the student records stored in the database.
 
-✏️ Example: Update a Student
+### ✏️ Example: Update a Student
 
+```http
 PUT /students/STUDENT_ID
 Content-Type: application/json
+```
 
+```json
 {
   "name": "Rahim Ahmed",
   "email": "rahim.updated@example.com",
   "age": 19,
   "department": "Software Engineering"
 }
+```
 
-Replace STUDENT_ID with a valid MongoDB document ID.
+Replace `STUDENT_ID` with a valid MongoDB document ID.
 
-🗑️ Example: Delete a Student
+### 🗑️ Example: Delete a Student
 
+```http
 DELETE /students/STUDENT_ID
+```
 
-Replace STUDENT_ID with the ID of the student you want to delete.
+Replace `STUDENT_ID` with the ID of the student you want to delete.
 
-Note: Request fields, response formats, and error handling depend on the implementation in server.js and models/Student.js.
+> **Note:** Request fields, response formats, and error handling depend on the implementation in `server.js` and `models/Student.js`.
 
-🧪 Testing
+## 🧪 Testing
 
-You can test the API using Postman or another HTTP client.
+You can test the API using [Postman](https://www.postman.com/) or another HTTP client.
 
-Start the server.
+1. Start the server.
+2. Send requests to the endpoints listed above.
+3. For POST and PUT requests, select **Body → raw → JSON** in Postman.
+4. Check the returned responses and verify changes in MongoDB.
 
-Send requests to the endpoints listed above.
+## 🔒 Security Notes
 
-For POST and PUT requests, select Body → raw → JSON in Postman.
+- Keep `.env` out of version control.
+- Never commit database passwords, API keys, or other secrets.
+- Keep `node_modules/` out of Git using `.gitignore`.
+- Use your own environment variables when running the project.
 
-Check the returned responses and verify changes in MongoDB.
-
-🔒 Security Notes
-
-Keep .env out of version control.
-
-Never commit database passwords, API keys, or other secrets.
-
-Keep node_modules/ out of Git using .gitignore.
-
-Use your own environment variables when running the project.
-
-🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 This project demonstrates practical experience with:
 
-Creating a REST API using Express.js
+- Creating a REST API using Express.js
+- Connecting Node.js applications to MongoDB
+- Defining schemas and models with Mongoose
+- Implementing CRUD operations
+- Handling HTTP requests and JSON data
+- Managing environment variables
+- Testing API endpoints
 
-Connecting Node.js applications to MongoDB
+## 👨‍💻 Author
 
-Defining schemas and models with Mongoose
-
-Implementing CRUD operations
-
-Handling HTTP requests and JSON data
-
-Managing environment variables
-
-Testing API endpoints
-
-👨‍💻 Author
-
-Soumik Riyan Madhu
+**Soumik Riyan Madhu**
 
 Student developer | Learning Full Stack Web Development
 
-GitHub: @Soumik-Riyan-Madhu
+- GitHub: [@Soumik-Riyan-Madhu](https://github.com/Soumik-Riyan-Madhu)
 
-📚 Course
+## 📚 Course
 
-Ostad | Full Stack Web Development with JavaScript (MERN) & AI
+**Ostad | Full Stack Web Development with JavaScript (MERN) & AI**
 
-Created for educational and learning purposes.
+*Created for educational and learning purposes.*
+
+---
 
 <p align="center">
   ⭐ If you find this project useful, consider giving the repository a star!
