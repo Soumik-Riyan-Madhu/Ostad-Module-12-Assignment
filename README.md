@@ -2,17 +2,7 @@
 
 ### A Student Management REST API built with Node.js, Express.js & MongoDB
 
-<p align="center">
-  A simple, structured, and beginner-friendly backend project for managing student records through RESTful API endpoints.
-</p>
-
-<p align="center">
-  ![Node.js](https://img.shields.io/badge/Node.js-22%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-  ![Express.js](https://img.shields.io/badge/Express.js-Backend-000000?style=for-the-badge&logo=express&logoColor=white)
-  ![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-</p>
-
----
+<p>A simple, structured, and beginner-friendly backend project for managing student records through RESTful API endpoints.</p>
 
 ## 📌 About the Project
 
