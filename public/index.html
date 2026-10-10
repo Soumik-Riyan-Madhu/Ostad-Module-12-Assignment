@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub | Student Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <a class="brand" href="/">Student<span>Hub</span></a>
+      <span class="status"><i></i> API Connected</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">STUDENT MANAGEMENT SYSTEM</p>
+      <h1>Manage your students<span>.</span></h1>
+      <p class="subtitle">
+        A simple dashboard to organize student records.
+      </p>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Students</span>
+        <h2 id="totalStudents">0</h2>
+        <p>Registered records</p>
+      </div>
+      <div class="stat-card">
+        <span>Departments</span>
+        <h2 id="totalDepartments">0</h2>
+        <p>Unique departments</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Student Directory</h2>
+          <p>Manage all your student information.</p>
+        </div>
+        <button id="addStudentBtn" class="primary-btn">
+          + Add Student
+        </button>
+      </div>
+
+      <input
+        id="searchInput"
+        class="search"
+        type="search"
+        placeholder="Search by name, email or department..."
+      >
+
+      <div id="message" class="message" role="status"></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Department</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable">
+            <tr>
+              <td colspan="5" class="empty">Loading students...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div id="studentModal" class="modal hidden">
+    <form id="studentForm" class="modal-card">
+      <div class="modal-heading">
+        <div>
+          <p class="eyebrow">STUDENT RECORD</p>
+          <h2 id="formTitle">Add Student</h2>
+        </div>
+        <button type="button" id="closeModal" class="close-btn"
+          aria-label="Close form">&times;</button>
+      </div>
+
+      <label for="name">Full Name</label>
+      <input id="name" name="name" required maxlength="100"
+        placeholder="Enter student name">
+
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" required
+        placeholder="student@example.com">
+
+      <label for="age">Age</label>
+      <input id="age" name="age" type="number" required min="1"
+        placeholder="Enter age">
+
+      <label for="department">Department</label>
+      <input id="department" name="department" required maxlength="100"
+        placeholder="e.g. CSE">
+
+      <div class="form-actions">
+        <button type="button" id="cancelBtn" class="secondary-btn">
+          Cancel
+        </button>
+        <button type="submit" class="primary-btn" id="saveBtn">
+          Save Student
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
